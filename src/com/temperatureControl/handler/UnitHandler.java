@@ -6,13 +6,9 @@ import java.util.TreeMap;
 
 public class UnitHandler {
 
-    private final int CELSIUS = 0;
-    private final int KELVIN = 1;
-    private final int FAHRENHEIT = 2;
-
-    private final String CEL = "Celsius";
-    private final String KEL = "Kelvin";
-    private final String FAH = "Fahrenheit";
+    private final int CEL = 0;
+    private final int KEL = 1;
+    private final int FAH = 2;
 
     /**
      * Converts specified unit to specified unit
@@ -24,15 +20,15 @@ public class UnitHandler {
      */
     public double convert(int toUnit, int fromUnit, double temperature) {
         switch (toUnit) {
-            case CELSIUS:
+            case CEL:
                 Celsius celsius = new Celsius();
-                return fromUnit == KELVIN ? celsius.ktoC(temperature) : celsius.ftoC(temperature);
-            case KELVIN:
+                return fromUnit == KEL ? celsius.ktoC(temperature) : celsius.ftoC(temperature);
+            case KEL:
                 Kelvin kelvin = new Kelvin();
-                return fromUnit == FAHRENHEIT ? kelvin.ftoK(temperature) : kelvin.ctoK(temperature);
-            case FAHRENHEIT:
+                return fromUnit == FAH ? kelvin.ftoK(temperature) : kelvin.ctoK(temperature);
+            case FAH:
                 Fahrenheit fahrenheit = new Fahrenheit();
-                return fromUnit == CELSIUS ? fahrenheit.cToF(temperature) : fahrenheit.kToF(temperature);
+                return fromUnit == CEL ? fahrenheit.cToF(temperature) : fahrenheit.kToF(temperature);
         }
         return 0.0;
     }
@@ -50,18 +46,18 @@ public class UnitHandler {
         TreeMap<Integer, String> kelMap = new TreeMap<Integer, String>();
         TreeMap<Integer, String> fahMap = new TreeMap<Integer, String>();
 
-        celMap.put(1, KEL);
-        celMap.put(2, FAH);
+        celMap.put(KEL, "Kelvin");
+        celMap.put(FAH, "Fahrenheit");
 
-        kelMap.put(0, CEL);
-        kelMap.put(2, FAH);
+        kelMap.put(CEL, "Celsius");
+        kelMap.put(FAH, "Fahrenheit");
 
-        fahMap.put(0, CEL);
-        fahMap.put(1, KEL);
+        fahMap.put(CEL, "Celsius");
+        fahMap.put(KEL, "Kelvin");
 
-        treeMap.put(CELSIUS, celMap);
-        treeMap.put(KELVIN, kelMap);
-        treeMap.put(FAHRENHEIT, fahMap);
+        treeMap.put(CEL, celMap);
+        treeMap.put(KEL, kelMap);
+        treeMap.put(FAH, fahMap);
 
         return treeMap;
     }
