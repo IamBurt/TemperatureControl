@@ -8,7 +8,7 @@ public class Kelvin {
      * @param degF degrees in fahrenheit
      * @return degrees in kelvin
      */
-    public double ftoK(double degF){
+    public double ftoK(double degF) {
         return ((degF - 32) / 1.80) + 273.15;
     }
 
@@ -18,7 +18,7 @@ public class Kelvin {
      * @param degC degrees in celsius
      * @return degrees in kelvin
      */
-    public double ctoK(double degC){
+    public double ctoK(double degC) {
         return degC + 273.15;
     }
 }
