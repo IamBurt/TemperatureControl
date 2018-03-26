@@ -14,6 +14,13 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
+    /*
+     * The reason we have exceptions in java is so our program doesn't 'break' or 'stop working'
+     * if the user put inputs an incorrect value at any point in the program.
+     *
+     * The reason that we have separate objects/classes is so not everything is bundled into one huge class
+     *
+     */
 
     private static Scanner scanner = new Scanner(System.in);    //used to collect user input
     private static UnitHandler handler = new UnitHandler();     //object of handler class
